@@ -9,38 +9,38 @@
 ![MQTT](https://img.shields.io/badge/MQTT-660066?style=for-the-badge&logo=eclipse-mosquitto&logoColor=white)
 ![JavaFX](https://img.shields.io/badge/JavaFX-000000?style=for-the-badge&logo=java&logoColor=white)
 
-## 📌 Giới thiệu
-Dự án này là một **hệ thống IoT** dùng để thu thập, xử lý, lưu trữ và trực quan hóa dữ liệu cảm biến.  
-Hệ thống tích hợp **cảm biến, MQTT broker, backend server, cơ sở dữ liệu, và JavaFX frontend** để giám sát và tương tác theo thời gian thực.
+## 📌 Introduction
+This project is an **IoT system** used to collect, process, store, and visualize sensor data.  
+The system integrates **sensors, an MQTT broker, a backend server, a database, and a JavaFX frontend** to enable real-time monitoring and interaction.
 
 ---
 
-## 🏗 Kiến trúc hệ thống
-Hệ thống bao gồm các thành phần chính sau:
+## 🏗 System Architecture
+The system consists of the following main components:
 
-1. **Cảm biến (Node.js client / thiết bị phần cứng)**  
-   - Thu thập dữ liệu thô (ví dụ: nhiệt độ, độ ẩm, chuyển động).  
-   - Gửi dữ liệu dưới dạng **JSON** qua **giao thức MQTT** đến broker.
+1. **Sensors (Node.js client / hardware devices)**  
+   - Collect raw data (e.g., temperature, humidity, motion).  
+   - Send data in **JSON** format via the **MQTT protocol** to the broker.
 
 2. **MQTT Broker**  
-   - Đóng vai trò trung gian truyền tin giữa cảm biến và backend server.  
-   - Đảm bảo truyền dữ liệu tin cậy bằng mô hình publish/subscribe của MQTT.
+   - Acts as a message intermediary between sensors and the backend server.  
+   - Ensures reliable data transmission using MQTT’s publish/subscribe model.
 
 3. **Backend Server (Spring Boot / Node.js Express)**  
-   - Đăng ký nhận dữ liệu từ MQTT broker.  
-   - Xử lý các gói tin JSON từ cảm biến.  
-   - Lưu dữ liệu vào **cơ sở dữ liệu MySQL**.  
-   - Cung cấp **HTTP REST API** cho việc truy vấn dữ liệu và cập nhật.  
-   - Xử lý logic tương tác với người dùng.
+   - Subscribes to data from the MQTT broker.  
+   - Processes JSON packets from sensors.  
+   - Stores data in the **MySQL database**.  
+   - Provides **HTTP REST APIs** for data querying and updates.  
+   - Handles user interaction logic.
 
-4. **Cơ sở dữ liệu MySQL**  
-   - Lưu trữ dữ liệu cảm biến và thông tin liên quan.  
-   - Hỗ trợ truy vấn dữ liệu lịch sử và dữ liệu theo thời gian thực.  
+4. **MySQL Database**  
+   - Stores sensor data and related information.  
+   - Supports historical and real-time data queries.  
 
 5. **JavaFX Frontend**  
-   - Ứng dụng desktop dành cho người dùng.  
-   - Giao tiếp với backend qua **HTTP API**.  
-   - Cung cấp giao diện trực quan, bảng điều khiển và chức năng tương tác thời gian thực.  
+   - Desktop application for users.  
+   - Communicates with the backend via **HTTP API**.  
+   - Provides a visual interface, dashboard, and real-time interaction features.  
 
 ---
 
@@ -61,7 +61,7 @@ Hệ thống bao gồm các thành phần chính sau:
 
 ---
 
-## ⚙️ Công nghệ sử dụng
+## ⚙️ Technologies Used
 - **IoT & Messaging**: MQTT, Node.js (sensor simulation)  
 - **Backend**: Spring Boot (Java) 
 - **Database**: MySQL  
